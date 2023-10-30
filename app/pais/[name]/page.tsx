@@ -47,7 +47,7 @@ export default async function CountryPage({
         <Image src="/arrow-back.svg" alt="ícone de seta para voltar" width={24} height={24} />
         Voltar
       </Link>
-      <article className="flex justify-between min-w-full p-10 bg-white rounded-xl">
+      <article className="flex md:flex-row flex-col justify-between min-w-full p-10 bg-white rounded-xl">
         <section>
           {country.capital && (
             <h2 className="text-xl text-gray-800 mt-3">
@@ -74,7 +74,7 @@ export default async function CountryPage({
           )}
         </section>
 
-        <div className="relative h-auto w-96 shadow-md">
+        <div className="relative h-48 my-2 md:h-auto w-96 shadow-md md:order-last order-first">
           <Image src={country.flags.svg} alt={country.flags.alt} fill className="object-cover" />
         </div>
       </article>
@@ -82,7 +82,7 @@ export default async function CountryPage({
         <h3 className="mt-12 text-2xl font-semibold text-gray-800">
           Países que fazem fronteira
         </h3>
-        <div className="grid grid-cols-5 gap-3 my-3 w-full">
+        <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full gap-2 mt-2">
           {borderCountries?.map((border) => (
               <CountryCard key={border.name} {...border}/>
           ))}
